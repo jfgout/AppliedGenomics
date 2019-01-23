@@ -1,0 +1,28 @@
+# After logging into lugh, run this series of commands to assemble the test dataset.
+
+# Let's start by making a directory to store all the files related to this project: 
+mkdir 01-assembly
+cd 01-assembly
+
+# fastq files for assembly are in: /mnt/scratch/AppliedGenomics/GenomeAssembly/
+# To look at these files, one could use: less /mnt/scratch/AppliedGenomics/GenomeAssembly/SRR8420302_1.fastq
+# Simply type 'q' to exit less
+
+# Let's prepare a script file to submit to the job scheduler:
+touch assemble-genome.sh
+chmod +x assemble-genome.sh # Making the file executable.
+
+# Edit the file with your favorite text editor (for example gedit):
+gedit assemble-genome.sh
+
+# Here is the text you would type into assemble-genome.sh:
+#!/bin/bash
+
+module load spades/3.13.0
+cd ~/01-assembly
+spades.py --only-assembler -1 /mnt/scratch/AppliedGenomics/GenomeAssembly/SRR8420302_1.fastq -2 /mnt/scratch/AppliedGenomics/GenomeAssembly/SRR8420302_2.fastq -o assembly
+
+#------------------------
+
+# Now we can submit the job to the scheduler:
+qsub assemble-genome.sh
