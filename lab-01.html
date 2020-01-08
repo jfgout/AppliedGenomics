@@ -1,0 +1,50 @@
+#################################################################################################################################
+# Applied Genomics - Lab 01 - Connecting to the supercomputer
+
+
+# 1. Prerequisites:
+
+# 1.1: VPN (Virtual Private Network)
+
+To connect to the supercomputer, you need to be looged into the Mississippi State network. Unless you are 
+connected using an ethernet cable on the campus, you will need first to log into the msstate virtual private 
+network (vpn).
+This requires the installation of a piece of software on your computer. Instruction on how to do this are 
+available here:
+
+For MacOS: https://servicedesk.msstate.edu/TDClient/KB/ArticleDet?ID=1547
+For Windows: https://servicedesk.msstate.edu/TDClient/KB/ArticleDet?ID=1546
+
+Follow the instructions on the msstate service desk to (links provided above) to install Cisco AnyConnect VPN 
+and log into the msstate VPN.
+
+
+# 1.2: SSH Client
+
+Connection to the supercomputer is done using SSH (Secure Shell). A shell is a user interface which can 
+be used to send command to a computer. In this first lab, you will learn the basic usage of a shell.
+
+
+# 1.2.a: MacOS Users.
+
+MacOS already contains all the tools needed. Launch the "Terminal" app and type: ssh [login]@lugh.biology.msstate.edu
+where [login] is to be substituted by your actual login name.
+
+If you have difficulties locating the Terminal app, you can find some help here: https://macpaw.com/how-to/use-terminal-on-mac
+
+# 1.2.b: Windows computers:
+
+By default, Windows does not ship with an ssh/terminal app (although that might not be true of the very latest versions).
+Windows users should install the following software: MobaXterm (available for free here: https://mobaxterm.mobatek.net/)
+
+After installing and launching MobaXterm, you can connect to the server with the following command line: ssh [login]@lugh.biology.msstate.edu
+where [login] is to be substituted by your actual login name.
+
+#------
+
+IMPORTANT: when prompted for the password, it will look like nothing is happening when you type the password (there will be 
+no starts/dots showing hidden password entry). This is normal. Simply type (or copy/paste) your password and press Enter.
+
+You should see the following 
+
+
